@@ -11,12 +11,22 @@
 <script>
 import FooterGuide from './components/FooterGuide/FooterGuide.vue';
 import HeaderTop from './components/HeaderTop/HeaderTop.vue';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'App',
   components:{
     FooterGuide,
     HeaderTop
-  }
+  },
+  mounted() {
+    // this.$store.dispatch('getAddress')
+    this.getAddress();
+  },
+  methods:{
+    ...mapActions(['getAddress'])
+  },
+  
 }
 </script>
 

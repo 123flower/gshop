@@ -1,6 +1,6 @@
 <template>
     <div>
-        <HeaderTop title="陆家嘴"></HeaderTop>
+        <HeaderTop :title="address.name"></HeaderTop>
         Msite
         
     </div>
@@ -8,11 +8,16 @@
 
 <script>
 import HeaderTop from '../../components/HeaderTop/HeaderTop.vue';
+import { mapState } from 'vuex';
+
 export default {
     name:"Msite",
     components:{
         HeaderTop,
-    }
+    },
+    computed:{
+        ...mapState(['address'])
+    },
 }
 </script>
 
